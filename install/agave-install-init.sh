@@ -16,9 +16,9 @@
 { # this ensures the entire script is downloaded #
 
 if [ -z "$SOLANA_DOWNLOAD_ROOT" ]; then
-    SOLANA_DOWNLOAD_ROOT="https://github.com/anza-xyz/agave/releases/download/"
+    SOLANA_DOWNLOAD_ROOT="https://github.com/gabrielhicks/agave/releases/download/"
 fi
-GH_LATEST_RELEASE="https://api.github.com/repos/anza-xyz/agave/releases/latest"
+GH_LATEST_RELEASE="https://api.github.com/repos/gabrielhicks/agave/releases/latest"
 
 set -e
 
@@ -62,25 +62,6 @@ main() {
       esac
     done
 
-    _ostype="$(uname -s)"
-    _cputype="$(uname -m)"
-
-    case "$_ostype" in
-    Linux)
-      _ostype=unknown-linux-gnu
-      ;;
-    Darwin)
-      if [[ $_cputype = arm64 ]]; then
-        _cputype=aarch64
-      fi
-      _ostype=apple-darwin
-      ;;
-    *)
-      err "machine architecture is currently unsupported"
-      ;;
-    esac
-    TARGET="${_cputype}-${_ostype}"
-
     temp_dir="$(mktemp -d 2>/dev/null || ensure mktemp -d -t agave-install-init)"
     ensure mkdir -p "$temp_dir"
 
@@ -101,7 +82,7 @@ main() {
       fi
     fi
 
-    download_url="$SOLANA_DOWNLOAD_ROOT/$release/agave-install-init-$TARGET"
+    download_url="$SOLANA_DOWNLOAD_ROOT/$release/agave-install-init"
     solana_install_init="$temp_dir/agave-install-init"
 
     printf 'downloading %s installer\n' "$release" 1>&2
