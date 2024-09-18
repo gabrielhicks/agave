@@ -14,7 +14,6 @@ Release channels have their own copy of this changelog:
 
 <a name="edge-channel"></a>
 ## [2.0.0] - Unreleased
-
 ## [1.18.0]
 * Changes
   * Added a github check to support `changelog` label

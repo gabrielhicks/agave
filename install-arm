@@ -1,5 +1,5 @@
-SOLANA_RELEASE=latest
-SOLANA_INSTALL_INIT_ARGS=latest
+SOLANA_RELEASE=stable
+SOLANA_INSTALL_INIT_ARGS=stable
 SOLANA_DOWNLOAD_ROOT=https://github.com/gabrielhicks/agave/releases/download/
 #!/bin/sh
 # Copyright 2016 The Rust Project Developers. See the COPYRIGHT
