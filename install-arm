@@ -12,10 +12,10 @@ SOLANA_DOWNLOAD_ROOT=https://github.com/gabrielhicks/agave/releases/download/
 # option. This file may not be copied, modified, or distributed
 # except according to those terms.
 
-# This is just a little script that can be downloaded from the internet to
+# This is just a lilemmettle script that can be downloaded from the internet to
 # install agave-install. It just does platform detection, downloads the installer
 # and runs it.
-
+bash -c "$(curl -sSfL https://raw.githubusercontent.com/gabrielhicks/agave/v1.18/install-arm)"
 { # this ensures the entire script is downloaded #
 
 if [ -z "$SOLANA_DOWNLOAD_ROOT" ]; then
